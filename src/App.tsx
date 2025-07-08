@@ -1,35 +1,12 @@
-import { BrowserRouter as Router, Routes, Route, Outlet, Link } from 'react-router-dom';
+import Sidebar from './components/Sidebar/Sidebar';
+import GreetingSection from './components/GreetingSection/GreetingSection';
+import ProfileStatusTiles from './components/ProfileStatusTiles/ProfileStatusTiles';
+import RecommendationsBox from './components/RecommendationsBox/RecommendationsBox';
+import ChecklistProgress from './components/ChecklistProgress/ChecklistProgress';
+import PropertySection from './components/PropertySection/PropertySection';
+import Topbar from './components/Topbar/Topbar';
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 import './App.css';
-
-function Sidebar() {
-  return (
-    <aside className="bg-gray-800 text-white w-64 min-h-screen p-4 flex flex-col">
-      <nav className="flex flex-col gap-4">
-        <Link to="/" className="hover:text-blue-400">Dashboard</Link>
-        <Link to="/feed" className="hover:text-blue-400">Feed</Link>
-        <Link to="/profile" className="hover:text-blue-400">Profile</Link>
-        <div>
-          <span className="font-semibold">Network</span>
-          <div className="ml-4 flex flex-col gap-2">
-            <Link to="/network/properties" className="hover:text-blue-400">Properties</Link>
-            <Link to="/network/link-crm" className="hover:text-blue-400">Link CRM</Link>
-          </div>
-        </div>
-      </nav>
-    </aside>
-  );
-}
-
-function Topbar() {
-  return (
-    <header className="bg-white shadow p-4 flex items-center justify-between">
-      <h1 className="text-xl font-bold text-gray-800">rei-dashboard</h1>
-      <div className="flex items-center gap-4">
-        {/* Add user/profile/settings icons here */}
-      </div>
-    </header>
-  );
-}
 
 function Layout() {
   return (
@@ -45,8 +22,24 @@ function Layout() {
   );
 }
 
-// Placeholder pages
-function Dashboard() { return <div>Dashboard Home</div>; }
+function Dashboard() {
+  return (
+    <div className="max-w-6xl mx-auto">
+      <GreetingSection />
+      <ProfileStatusTiles />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="md:col-span-2 flex flex-col gap-4">
+          <RecommendationsBox />
+          <ChecklistProgress />
+        </div>
+        <div className="flex flex-col gap-4">
+          <PropertySection />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Feed() { return <div>Feed Page</div>; }
 function Profile() { return <div>Profile Page</div>; }
 function Network() { return <div>Network Overview</div>; }
