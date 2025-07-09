@@ -1,5 +1,6 @@
 import Topbar from './components/Topbar/Topbar';
 import Sidebar from './components/Sidebar/Sidebar';
+import GreetingSection from './components/GreetingSection/GreetingSection';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react';
 
@@ -10,7 +11,7 @@ const Placeholder = ({ title }: { title: string }) => (
 const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-50 font-sans flex flex-col ml-10">
+      <div className="min-h-screen bg-gray-50 font-sans flex flex-col">
         {/* Topbar at the top */}
         <Topbar />
         {/* Content row: Sidebar and main content */}
@@ -20,7 +21,7 @@ const App: React.FC = () => {
           {/* Main routed content */}
           <main className="flex-1 p-4">
             <Routes>
-              <Route path="/" element={<Placeholder title="Dashboard" />} />
+              <Route path="/" element={<GreetingSection />} />
               <Route path="/rei-directory" element={<Placeholder title="REI Directory" />} />
               <Route path="/feed" element={<Placeholder title="Feed" />} />
               <Route path="/profile" element={<Placeholder title="Profile" />} />
