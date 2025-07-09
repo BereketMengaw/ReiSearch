@@ -1,9 +1,9 @@
 import React from 'react';
 import Bereket from "../../../src/assets/bereket.jpg";
-import Logo from "../../assets/logo-reisearch.jpg";
+import Logo from "../../assets/logo-greeting.png";
 
 const GreetingSection: React.FC = () => (
-  <section className="w-full mt-4 max-w-3xl ml-[272px] grid grid-cols-3 grid-rows-2 gap-6 mb-4">
+  <section className="w-full mt-10 max-w-3xl ml-[272px] grid grid-cols-3 grid-rows-2 gap-6 mb-4">
     {/* Top left: Greeting, progress, profile, button (spans 2 columns) */}
     <div className="col-span-2 mt-3 row-span-1 bg-white dark:bg-gray-800 rounded-xl shadow p-3 flex items-center gap-3 transition-colors duration-300">
       <div className="flex-1">

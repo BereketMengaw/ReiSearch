@@ -68,7 +68,7 @@ const dotIcon = () => (
 );
 
 const ProfileStatusTiles: React.FC = () => (
-  <section className="bg-white dark:bg-gray-800 rounded-2xl shadow p-4 w-full max-w-xs flex flex-col gap-2 mt-12 transition-colors duration-300">
+  <section className="bg-white dark:bg-gray-800 mt-6 md:mt-16 rounded-2xl shadow p-3 md:p-4 w-full max-w-full md:max-w-xs flex flex-col gap-2 mx-auto transition-colors duration-300">
     <div className="flex justify-between items-center mb-2">
       <h3 className="text-[13px] text-gray-900 dark:text-gray-100">Complete Your Home Dispo Setup</h3>
       <a href="#" className="flex items-center gap-1 text-xs text-blue-500 font-semibold hover:underline">
