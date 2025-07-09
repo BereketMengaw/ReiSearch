@@ -1,11 +1,12 @@
 import React from 'react';
+import Bereket from "../../../src/assets/bereket.jpg";
 
 const GreetingSection: React.FC = () => (
-  <section className="w-full max-w-4xl ml-[272px] grid grid-cols-3 grid-rows-2 gap-3 mb-4">
+  <section className="w-full max-w-3xl ml-[272px] grid grid-cols-3 grid-rows-2 gap-6 mb-4">
     {/* Top left: Greeting, progress, profile, button (spans 2 columns) */}
     <div className="col-span-2 row-span-1 bg-white rounded-xl shadow p-3 flex items-center gap-3">
       <div className="flex-1">
-        <span className="text-gray-700 text-xs">Hey, <span className="font-bold">Abraham</span></span>
+        <span className="text-gray-700 text-sm font-bold">Hey, <span className="font-bold">Bereket</span></span>
         <div className="flex items-center mt-1 mb-1">
           <span className="text-base font-bold mr-2">73%</span>
           <div className="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
@@ -14,11 +15,11 @@ const GreetingSection: React.FC = () => (
         </div>
         <button className="mt-2 px-2 py-0.5 bg-blue-600 text-white rounded text-xs font-semibold shadow hover:bg-blue-700 transition">Learn More</button>
       </div>
-      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" className="w-30 h-30 rounded-xl object-cover border-2 border-white shadow" />
+      <img src={Bereket} alt="Profile" className="w-24 h-24 rounded-xl object-cover border-2 border-white shadow" />
     </div>
 
     {/* Top right: Public Info and Enable Notifications */}
-    <div className="col-span-1 row-span-1 flex gap-3">
+    <div className="col-span-1 row-span-1 flex gap-3 min-w-[270px]">
       <div className="flex-1 bg-gray-100 rounded-xl shadow flex flex-col items-center justify-center p-2">
         <span className="text-gray-500 text-base mb-1">
           <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#bbb" strokeWidth="2" fill="#f7f7f7"/><text x="12" y="16" textAnchor="middle" fontSize="10" fill="#bbb">i</text></svg>

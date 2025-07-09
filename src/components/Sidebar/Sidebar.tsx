@@ -40,7 +40,7 @@ const DropdownArrow = () => (
 );
 
 const Sidebar: React.FC = () => (
-  <aside className="fixed mt-5 mb-5  left-3 top-20 bottom-0 z-30 bg-white text-gray-900 w-60 h-screen rounded-2xl shadow-lg border border-gray-100 flex flex-col justify-between p-0 ml-2   max-h-[calc(100vh-5rem)]">
+  <aside className="fixed mt-5 mb-5  left-3 top-10 bottom-0 z-30 bg-white text-gray-900 w-60 h-screen rounded-2xl shadow-lg border border-gray-100 flex flex-col justify-between p-0 ml-2   max-h-[calc(100vh-5rem)]">
     {/* Navigation */}
     <nav className="flex flex-col gap-1 pt-3 px-2">
       {/* REI Directory (standalone) */}

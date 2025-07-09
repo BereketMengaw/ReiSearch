@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Search, Menu } from 'lucide-react';
 import Logo from '../../assets/logo-reisearch.jpg';
 
-const ICON_SIZE = 36;
+const ICON_SIZE = 28; // Reduced from 36
 
 const Topbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,20 +24,20 @@ const Topbar: React.FC = () => {
   }, [menuOpen]);
 
   return (
-    <header className="w-full h-20 bg-white shadow-sm px-1 sm:px-3 flex items-center justify-between rounded-b-lg relative z-20">
+    <header className="w-full h-18 bg-white shadow-sm px-1 sm:px-3 flex items-center justify-between rounded-b-lg relative z-20"> {/* h-16 instead of h-20 */}
       {/* Left: Logo and Search by Transaction Button */}
-      <div className="flex items-center gap-5 min-w-fit ">
+      <div className="flex items-center gap-4 min-w-fit ">
         {/* Logo image */}
-        <img src={Logo} alt="ReiSearch.com logo" className="h-14 w-auto object-contain" />
-        <button className="hidden sm:inline bg-yellow-400 hover:bg-yellow-500 transition px-5 py-2 text-sm font-semibold text-gray-800 rounded-full shadow whitespace-nowrap ml-2" style={{fontSize:'1.1rem'}}>
+        <img src={Logo} alt="ReiSearch.com logo" className="h-10 w-auto object-contain" /> {/* h-10 instead of h-14 */}
+        <button className="hidden sm:inline bg-yellow-400 hover:bg-yellow-500 transition px-4 py-1.5 text-xs font-semibold text-gray-800 rounded-full shadow whitespace-nowrap ml-2" style={{fontSize:'1rem'}}>
           Staging / homedispo...
         </button>
       </div>
       {/* Center: Search Bar */}
       <div className="flex-1 flex justify-center mx-2 sm:mx-4">
-        <div className="flex items-center bg-gray-100 rounded-full px-2 sm:px-3 py-1 w-full max-w-xs sm:max-w-md border border-gray-200">
+        <div className="flex items-center bg-gray-100 rounded-full px-2 sm:px-3 py-0.5 w-full max-w-xs sm:max-w-md border border-gray-200">
           {/* Custom house icon only, matching screenshot */}
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
+          <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
             <defs>
               <linearGradient id="houseGradient" x1="16" y1="8" x2="16" y2="28" gradientUnits="userSpaceOnUse">
                 <stop stopColor="#6CA0C8" />
@@ -66,7 +66,7 @@ const Topbar: React.FC = () => {
         </div>
       </div>
       {/* Right: Responsive icons and profile */}
-      <div className="hidden md:flex items-center gap-8 min-w-fit">
+      <div className="hidden md:flex items-center gap-6 min-w-fit"> {/* gap-6 instead of gap-8 */}
         {/* Chat bubble icon */}
         <svg width={ICON_SIZE} height={ICON_SIZE} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="4" y="6" width="24" height="16" rx="6" fill="#2196F3"/>
@@ -87,7 +87,7 @@ const Topbar: React.FC = () => {
             <path d="M16 28C18.2091 28 20 26.2091 20 24H12C12 26.2091 13.7909 28 16 28Z" fill="#FFB300"/>
             <path d="M24 20V14C24 9.58172 20.4183 6 16 6C11.5817 6 8 9.58172 8 14V20L6 22V24H26V22L24 20Z" fill="#FFEB3B" stroke="#FFB300" strokeWidth="2"/>
           </svg>
-          <span className="absolute -top-2 -right-2 bg-red-600 text-white text-sm font-bold rounded-full px-2 py-0.5 border-2 border-white" style={{fontSize:'1rem'}}>74</span>
+          <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full px-1.5 py-0.5 border-2 border-white" style={{fontSize:'0.85rem'}}>74</span>
         </span>
         <svg width={ICON_SIZE} height={ICON_SIZE} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           {[0,1,2].map(row => (
@@ -96,26 +96,25 @@ const Topbar: React.FC = () => {
             ))
           ))}
         </svg>
-        <button className="flex items-center gap-3 pl-2 pr-5 py-2 rounded-lg border border-blue-500 bg-white hover:bg-blue-50 transition shadow-sm">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" className="w-10 h-10 rounded-md object-cover border border-blue-500" />
-          <span className="font-bold text-blue-700 text-lg">Abrham</span>
-          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 8L10 12L14 8" stroke="#1976D2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        <button className="flex items-center gap-2 pl-2 pr-4 py-1.5 rounded-lg border border-blue-500 bg-white hover:bg-blue-50 transition shadow-sm"> {/* gap-2, pr-4, py-1.5 */}
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" className="w-8 h-8 rounded-md object-cover border border-blue-500" /> {/* w-8 h-8 */}
+          <span className="font-bold text-blue-700 text-base">Abrham</span> {/* text-base */}
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 8L10 12L14 8" stroke="#1976D2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </button>
       </div>
       {/* Mobile/Tablet: Hamburger menu for right side */}
       <button className="md:hidden flex items-center justify-center p-2 rounded-lg hover:bg-gray-100 transition" onClick={() => setMenuOpen(v => !v)} aria-label="Open menu">
-        <Menu className="w-7 h-7 text-blue-700" />
+        <Menu className="w-6 h-6 text-blue-700" /> {/* w-6 h-6 */}
       </button>
       {/* Dropdown menu for mobile/tablet */}
       <div
         ref={menuRef}
-        className={`md:hidden absolute right-4 top-20 w-64 bg-white rounded-xl shadow-lg border border-gray-200 transition-all duration-300 ease-in-out z-30
+        className={`md:hidden absolute right-4 top-16 w-60 bg-white rounded-xl shadow-lg border border-gray-200 transition-all duration-300 ease-in-out z-30
           ${menuOpen ? 'opacity-100 scale-100 pointer-events-auto translate-y-0' : 'opacity-0 scale-95 pointer-events-none -translate-y-2'}
         `}
-        style={{boxShadow: '0 8px 32px 0 rgba(60,60,100,0.12)'}}
-      >
-        <div className="flex flex-col gap-4 p-4">
-          <div className="flex items-center gap-4 justify-center">
+        style={{boxShadow: '0 8px 32px 0 rgba(60,60,100,0.12)'}}>
+        <div className="flex flex-col gap-3 p-3">
+          <div className="flex items-center gap-3 justify-center">
             {/* Chat bubble icon */}
             <svg width={ICON_SIZE} height={ICON_SIZE} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="4" y="6" width="24" height="16" rx="6" fill="#2196F3"/>
@@ -136,7 +135,7 @@ const Topbar: React.FC = () => {
                 <path d="M16 28C18.2091 28 20 26.2091 20 24H12C12 26.2091 13.7909 28 16 28Z" fill="#FFB300"/>
                 <path d="M24 20V14C24 9.58172 20.4183 6 16 6C11.5817 6 8 9.58172 8 14V20L6 22V24H26V22L24 20Z" fill="#FFEB3B" stroke="#FFB300" strokeWidth="2"/>
               </svg>
-              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-sm font-bold rounded-full px-2 py-0.5 border-2 border-white" style={{fontSize:'1rem'}}>74</span>
+              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full px-1.5 py-0.5 border-2 border-white" style={{fontSize:'0.85rem'}}>74</span>
             </span>
             <svg width={ICON_SIZE} height={ICON_SIZE} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               {[0,1,2].map(row => (
@@ -146,10 +145,10 @@ const Topbar: React.FC = () => {
               ))}
             </svg>
           </div>
-          <button className="flex items-center gap-3 pl-2 pr-5 py-2 rounded-lg border border-blue-500 bg-white hover:bg-blue-50 transition shadow-sm">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" className="w-10 h-10 rounded-md object-cover border border-blue-500" />
-            <span className="font-bold text-blue-700 text-lg">Abrham</span>
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 8L10 12L14 8" stroke="#1976D2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <button className="flex items-center gap-2 pl-2 pr-4 py-1.5 rounded-lg border border-blue-500 bg-white hover:bg-blue-50 transition shadow-sm">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" className="w-8 h-8 rounded-md object-cover border border-blue-500" />
+            <span className="font-bold text-blue-700 text-base">Abrham</span>
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 8L10 12L14 8" stroke="#1976D2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </button>
         </div>
       </div>
