@@ -79,7 +79,7 @@ const ProfileStatusTiles: React.FC = () => (
         Learn More
       </a>
     </div>
-    {sections.map((section, idx) => (
+    {sections.map((section, ) => (
       <div
         key={section.title}
         className={`rounded-xl p-3 mb-1 last:mb-0 relative overflow-hidden dark:bg-black`}
