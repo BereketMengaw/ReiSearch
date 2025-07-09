@@ -3,29 +3,29 @@ import Bereket from "../../../src/assets/bereket.jpg";
 import Logo from "../../assets/logo-reisearch.jpg";
 
 const GreetingSection: React.FC = () => (
-  <section className="w-full mt-10 max-w-3xl ml-[272px] grid grid-cols-3 grid-rows-5/2 gap-6 mb-4">
+  <section className="w-full max-w-3xl ml-0 md:ml-[272px] mt-4 md:mt-10 grid grid-cols-1 md:grid-cols-3 grid-rows-1 md:grid-rows-5/2 gap-3 md:gap-6 mb-2 md:mb-4 px-0 md:px-0">
     {/* Top left: Greeting, progress, profile, button (spans 2 columns) */}
-    <div className="col-span-2 mt-3 row-span-3/2 bg-gray-200 dark:bg-gray-800 rounded-2xl shadow p-6 flex items-center gap-6 transition-colors duration-300">
-   <div className="flex-1 flex flex-col justify-between h-full">
-    <span className="text-gray-800 dark:text-gray-100 text-lg font-semibold mb-1">Hey, Bereket</span>
-    <span className="text-3xl font-bold text-gray-900 dark:text-white mb-0.5">73%</span>
-    <div className="w-full h-2 rounded-full bg-blue-100">
-      <div className="h-2 rounded-full bg-blue-500" style={{ width: '73%' }}></div>
+    <div className="col-span-1 md:col-span-2 mt-2 md:mt-3 row-span-1 md:row-span-3/2 bg-gray-200 dark:bg-gray-800 rounded-2xl shadow p-3 md:p-6 flex flex-col md:flex-row items-center gap-3 md:gap-6 transition-colors duration-300">
+      <div className="flex-1 flex flex-col justify-between h-full">
+        <span className="text-gray-800 dark:text-gray-100 text-base md:text-lg font-semibold mb-1">Hey, Bereket</span>
+        <span className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-0.5">73%</span>
+        <div className="w-full h-2 rounded-full bg-blue-100">
+          <div className="h-2 rounded-full bg-blue-500" style={{ width: '73%' }}></div>
+        </div>
+        <button className="flex items-center gap-1 px-2 bg-blue-500 text-white text-xs md:text-sm font-medium rounded-md hover:bg-blue-600 transition shadow w-fit mt-2 md:mt-0">
+          <svg width="14" height="14" fill="none" viewBox="0 0 20 20">
+            <circle cx="10" cy="10" r="9" stroke="#fff" strokeWidth="2" fill="none" />
+            <polygon points="8,6 14,10 8,14" fill="#fff" />
+          </svg>
+          Learn More
+        </button>
+      </div>
+      <img src={Bereket} alt="Profile" className="w-20 h-20 md:w-28 md:h-28 rounded-xl object-cover" />
     </div>
-    <button className="flex items-center gap-1 px-2 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 transition shadow w-fit">
-      <svg width="14" height="14" fill="none" viewBox="0 0 20 20">
-        <circle cx="10" cy="10" r="9" stroke="#fff" strokeWidth="2" fill="none" />
-        <polygon points="8,6 14,10 8,14" fill="#fff" />
-      </svg>
-      Learn More
-    </button>
-  </div>
-  <img src={Bereket} alt="Profile" className="w-28 h-28 rounded-xl object-cover " />
-</div>
 
 
     {/* Top right: Public Info and Enable Notifications */}
-    <div className="col-span-1 row-span-1 flex gap-3 min-w-[270px] mt-4">
+    <div className="col-span-1 row-span-1 flex gap-2 md:gap-3 min-w-0 md:min-w-[270px] mt-2 md:mt-4">
       <div className="flex-1 bg-gray-100 dark:bg-gray-800 rounded-xl shadow flex flex-col items-center justify-center p-2 transition-colors duration-300">
         <span className="text-yellow-400 text-base mb-1">
           <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
@@ -46,11 +46,11 @@ const GreetingSection: React.FC = () => (
     {/* bottom section */}
 
 
-    <div className="col-span-2 row-span-1 bg-white dark:bg-gray-800 rounded-xl shadow p-3 flex gap-3 transition-colors duration-300">
+    <div className="col-span-1 md:col-span-2 row-span-1 bg-white dark:bg-gray-800 rounded-xl shadow p-2 md:p-3 flex gap-2 md:gap-3 transition-colors duration-300">
       {/* Bottom left: Add Property */}
 
       
-      <div className="flex-1 bg-purple-100 dark:bg-purple-900 rounded-xl shadow flex flex-col items-center justify-center p-3 min-w-[120px] transition-colors duration-300">
+      <div className="flex-1 bg-purple-100 dark:bg-purple-900 rounded-xl shadow flex flex-col items-center justify-center p-2 md:p-3 min-w-0 md:min-w-[120px] transition-colors duration-300">
   <span className="text-purple-400 text-lg mb-2">
     <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
       {/* Transparent inside, black ring */}
@@ -65,14 +65,14 @@ const GreetingSection: React.FC = () => (
 
 
       {/* Bottom center: REI Directory */}
-      <div className="flex-1 bg-blue-100 dark:bg-blue-900 rounded-xl shadow flex flex-col items-center justify-center p-3 min-w-[120px] border border-blue-100 dark:border-blue-900 transition-colors duration-300 relative overflow-hidden">
+      <div className="flex-1 bg-blue-100 dark:bg-blue-900 rounded-xl shadow flex flex-col items-center justify-center p-2 md:p-3 min-w-0 md:min-w-[120px] border border-blue-100 dark:border-blue-900 transition-colors duration-300 relative overflow-hidden">
         {/* Faded logo background */}
-        <img src={Logo} alt="ReiSearch Logo" className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-32 md:h-32 object-contain opacity-20 pointer-events-none select-none" />
+        <img src={Logo} alt="ReiSearch Logo" className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-32 md:h-32 object-contain opacity-20 pointer-events-none select-none" />
         {/* Foreground content */}
-        <span className="relative z-10 text-gray-500 dark:text-gray-300  top-1/4 text-xs font-semibold py-6 block text-center">Explore ReiDirectory</span>
+        <span className="relative z-10 text-gray-500 dark:text-gray-300 top-1/4 text-xs font-semibold py-4 md:py-6 block text-center">Explore ReiDirectory</span>
       </div>
       {/* Bottom right: Explore Messaging */}
-      <div className="flex-1 bg-green-100 dark:bg-green-900 rounded-xl shadow flex flex-col items-center justify-center p-3 min-w-[120px] transition-colors duration-300">
+      <div className="flex-1 bg-green-100 dark:bg-green-900 rounded-xl shadow flex flex-col items-center justify-center p-2 md:p-3 min-w-0 md:min-w-[120px] transition-colors duration-300">
         
         
         <span className="text-blue-600 text-lg mb-2">
