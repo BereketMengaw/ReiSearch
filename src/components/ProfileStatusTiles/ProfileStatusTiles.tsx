@@ -73,7 +73,7 @@ const ProfileStatusTiles: React.FC = () => (
       <h3 className="font-semibold text-[13px] text-gray-900">Complete Your Home Dispo Setup</h3>
       <a href="#" className="text-xs text-blue-500 font-semibold hover:underline">Learn More</a>
     </div>
-    {sections.map((section, idx) => (
+    {sections.map((section, ) => (
       <div
         key={section.title}
         className={`rounded-xl p-3 mb-1 last:mb-0 relative overflow-hidden dark:bg-black`}

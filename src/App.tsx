@@ -18,7 +18,7 @@ const App: React.FC = () => {
     <BrowserRouter>
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 font-sans flex flex-col transition-colors duration-300">
         {/* Topbar at the top */}
-        <Topbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+        <Topbar setSidebarOpen={setSidebarOpen} />
 
         {/* Content row: Sidebar, main content, and right sidebar */}
         <div className="flex flex-col md:flex-row flex-1 w-full pt-2 md:pt-4 px-0 md:px-0 overflow-x-hidden">

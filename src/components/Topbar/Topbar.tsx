@@ -4,13 +4,12 @@ import Logo from '../../assets/logo-reisearch-bg-none.png';
 import Img from "../../assets/bereket.jpg"
 
 interface TopbarProps {
-  sidebarOpen: boolean;
   setSidebarOpen: (open: boolean) => void;
 }
 
 const ICON_SIZE = 28; // Reduced from 36
 
-const Topbar: React.FC<TopbarProps> = ({ sidebarOpen, setSidebarOpen }) => {
+const Topbar: React.FC<TopbarProps> = ({ setSidebarOpen }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
