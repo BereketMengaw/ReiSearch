@@ -1,30 +1,28 @@
 import React from 'react';
 import Bereket from "../../../src/assets/bereket.jpg";
-import Logo from "../../assets/logo-greeting.png";
+import Logo from "../../assets/logo-reisearch.jpg";
 
 const GreetingSection: React.FC = () => (
-  <section className="w-full mt-10 max-w-3xl ml-[272px] grid grid-cols-3 grid-rows-2 gap-6 mb-4">
+  <section className="w-full mt-10 max-w-3xl ml-[272px] grid grid-cols-3 grid-rows-5/2 gap-6 mb-4">
     {/* Top left: Greeting, progress, profile, button (spans 2 columns) */}
-    <div className="col-span-2 mt-3 row-span-1 bg-white dark:bg-gray-800 rounded-xl shadow p-3 flex items-center gap-3 transition-colors duration-300">
-      <div className="flex-1">
-        <span className="text-gray-700 dark:text-gray-100 text-sm font-bold">Hey, <span className="font-bold">Bereket</span></span>
-        <div className="flex items-center mt-1 mb-1">
-          <span className="text-base font-bold mr-2">73%</span>
-          <div className="flex-1 h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-            <div className="h-1.5 bg-blue-500 rounded-full" style={{ width: '73%' }}></div>
-          </div>
-        </div>
-        <button className="mt-2 px-2 py-0.5 bg-blue-500 text-white rounded text-xs rounded-md font-semibold shadow hover:bg-blue-700 transition flex items-center gap-1">
-          <span className="inline-flex items-center justify-center w-4 h-4">
-            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <polygon points="2,1 7,4 2,7" fill="#facc15" />
-            </svg>
-          </span>
-          Learn More
-        </button>
-      </div>
-      <img src={Bereket} alt="Profile" className="w-24 h-24 p-2 rounded-2xl rounded-xl object-cover border-2 border-white dark:border-gray-700 shadow" />
+    <div className="col-span-2 mt-3 row-span-3/2 bg-gray-200 dark:bg-gray-800 rounded-2xl shadow p-6 flex items-center gap-6 transition-colors duration-300">
+   <div className="flex-1 flex flex-col justify-between h-full">
+    <span className="text-gray-800 dark:text-gray-100 text-lg font-semibold mb-1">Hey, Bereket</span>
+    <span className="text-3xl font-bold text-gray-900 dark:text-white mb-0.5">73%</span>
+    <div className="w-full h-2 rounded-full bg-blue-100">
+      <div className="h-2 rounded-full bg-blue-500" style={{ width: '73%' }}></div>
     </div>
+    <button className="flex items-center gap-1 px-2 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 transition shadow w-fit">
+      <svg width="14" height="14" fill="none" viewBox="0 0 20 20">
+        <circle cx="10" cy="10" r="9" stroke="#fff" strokeWidth="2" fill="none" />
+        <polygon points="8,6 14,10 8,14" fill="#fff" />
+      </svg>
+      Learn More
+    </button>
+  </div>
+  <img src={Bereket} alt="Profile" className="w-28 h-28 rounded-xl object-cover " />
+</div>
+
 
     {/* Top right: Public Info and Enable Notifications */}
     <div className="col-span-1 row-span-1 flex gap-3 min-w-[270px] mt-4">

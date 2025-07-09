@@ -58,11 +58,11 @@ const App: React.FC = () => {
 
 
 
-            {/* Right sidebar: ProfileStatusTiles at the top 
+            {/* Right sidebar: ProfileStatusTiles at the top */}
             <div className="flex flex-col items-end mt-0 ml-4" style={{minWidth: '260px'}}>
               <ProfileStatusTiles />
             </div>
-            */}
+            
 
 
           </div>
