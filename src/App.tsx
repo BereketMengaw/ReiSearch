@@ -15,7 +15,7 @@ const Placeholder = ({ title }: { title: string }) => (
 const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-50 font-sans flex flex-col">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 font-sans flex flex-col transition-colors duration-300">
         {/* Topbar at the top */}
         <Topbar />
         {/* Content row: Sidebar, main content, and right sidebar */}

@@ -17,25 +17,25 @@ const properties = [
 ];
 
 const PropertyList: React.FC = () => (
-  <div className="w-full overflow-x-auto py-2 ml-[272px]">
+  <div className="w-full overflow-x-auto py-2 ml-[272px] bg-transparent dark:bg-gray-900 transition-colors duration-300">
     {/* Tabs Bar */}
     <div className="flex items-center gap-2 mb-2">
       {tabs.map((tab, ) => (
         <button
           key={tab.label}
           className={`px-3 py-1 rounded font-medium text-xs border transition-all duration-150
-            ${tab.active ? 'bg-blue-50 border-blue-500 text-blue-700 shadow' : 'bg-white border-gray-200 text-gray-600 hover:bg-gray-100'}`}
+            ${tab.active ? 'bg-blue-50 dark:bg-blue-900 border-blue-500 text-blue-700 dark:text-blue-200 shadow' : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'}`}
         >
           {tab.label} <span className="ml-1 text-blue-500">0</span>
         </button>
       ))}
     </div>
     {/* Separator line */}
-    <div className="w-full h-px bg-gray-400 mb-3" />
+    <div className="w-full h-px bg-gray-400 dark:bg-gray-700 mb-3 transition-colors duration-300" />
     {/* Property Cards */}
     <div className="flex flex-row gap-4 min-w-max">
       {properties.map((property) => (
-        <div key={property.id} className="relative w-72 h-56 rounded-xl shadow bg-white flex-shrink-0">
+        <div key={property.id} className="relative w-72 h-56 rounded-xl shadow bg-white dark:bg-gray-800 flex-shrink-0 transition-colors duration-300">
           <img src={property.image} alt={property.price} className="w-full h-full object-cover rounded-xl" />
           <span className="absolute top-2 left-2 bg-black bg-opacity-60 text-white text-xs font-bold px-2 py-0.5 rounded">{property.price}</span>
           <span className="absolute top-2 right-2">

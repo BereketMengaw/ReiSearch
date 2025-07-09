@@ -68,34 +68,49 @@ const dotIcon = () => (
 );
 
 const ProfileStatusTiles: React.FC = () => (
-  <section className="bg-white rounded-2xl shadow p-4 w-full max-w-xs flex flex-col gap-2  mt-12">
+  <section className="bg-white dark:bg-gray-800 rounded-2xl shadow p-4 w-full max-w-xs flex flex-col gap-2 mt-12 transition-colors duration-300">
     <div className="flex justify-between items-center mb-2">
-      <h3 className="font-semibold text-[13px] text-gray-900">Complete Your Home Dispo Setup</h3>
-      <a href="#" className="text-xs text-blue-500 font-semibold hover:underline">Learn More</a>
+      <h3 className="text-[13px] text-gray-900 dark:text-gray-100">Complete Your Home Dispo Setup</h3>
+      <a href="#" className="flex items-center gap-1 text-xs text-blue-500 font-semibold hover:underline">
+        <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-500">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="3,2 8,5 3,8" fill="white" />
+          </svg>
+        </span>
+        Learn More
+      </a>
     </div>
-    {sections.map((section, ) => (
-      <div
-        key={section.title}
-        className={`rounded-xl p-3 mb-1 last:mb-0 relative overflow-hidden`}
-      >
-        {/* Dynamic background for percentValue% of each section */}
+    {sections.map((section) => {
+      // Map light bg to dark bg
+      let darkBg = '';
+      if (section.bg === 'bg-gray-100') darkBg = 'dark:bg-gray-800';
+      if (section.bg === 'bg-blue-100') darkBg = 'dark:bg-blue-900';
+      if (section.bg === 'bg-purple-100') darkBg = 'dark:bg-purple-900';
+      if (section.bg === 'bg-green-100') darkBg = 'dark:bg-green-900';
+      return (
         <div
-          className={`absolute top-0 left-0 h-full z-0 rounded-xl ${section.bg}`}
-          style={{ width: `${section.percentValue}%` }}
-        />
-        <div className="flex items-center mb-1 relative z-10">
-          <span className="font-bold text-xs text-gray-700 mr-2">{section.title} <span className={`${section.percentColor}`}>({section.percent})</span></span>
+          key={section.title}
+          className={`rounded-xl p-3 mb-1 last:mb-0 relative overflow-hidden ${section.bg} ${darkBg} transition-colors duration-300`}
+        >
+          {/* Dynamic background for percentValue% of each section */}
+          <div
+            className={`absolute top-0 left-0 h-full z-0 rounded-xl ${section.bg} ${darkBg}`}
+            style={{ width: `${section.percentValue}%` }}
+          />
+          <div className="flex items-center mb-1 relative z-10">
+            <span className="font-bold text-xs text-gray-700 dark:text-gray-100 mr-2">{section.title} <span className={`${section.percentColor}`}>({section.percent})</span></span>
+          </div>
+          <ul className="ml-1 relative z-10">
+            {section.items.map((item, i) => (
+              <li key={i} className="flex items-center text-xs text-gray-700 dark:text-gray-100 mb-1 last:mb-0">
+                {item.checked ? checkIcon() : dotIcon()}
+                {item.label}
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul className="ml-1 relative z-10">
-          {section.items.map((item, i) => (
-            <li key={i} className="flex items-center text-xs text-gray-700 mb-1 last:mb-0">
-              {item.checked ? checkIcon() : dotIcon()}
-              {item.label}
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))}
+      );
+    })}
   </section>
 );
 

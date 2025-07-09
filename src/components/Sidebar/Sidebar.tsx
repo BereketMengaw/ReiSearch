@@ -40,7 +40,7 @@ const DropdownArrow = () => (
 );
 
 const Sidebar: React.FC = () => (
-  <aside className="fixed mt-5 mb-5  left-3 top-10 bottom-0 z-30 bg-white text-gray-900 w-60 h-screen rounded-2xl shadow-lg border border-gray-100 flex flex-col justify-between p-0 ml-2   max-h-[calc(100vh-5rem)]">
+  <aside className="fixed mt-5 mb-5 left-3 top-10 bottom-0 z-30 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 w-60 h-screen rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 flex flex-col justify-between p-0 ml-2 max-h-[calc(100vh-5rem)] transition-colors duration-300">
     {/* Navigation */}
     <nav className="flex flex-col gap-1 pt-3 px-2">
       {/* REI Directory (standalone) */}
@@ -49,7 +49,7 @@ const Sidebar: React.FC = () => (
           key={typeof link.label === 'string' ? link.to : link.to + '-label'}
           to={link.to}
           className={({ isActive }) =>
-            `flex items-center gap-3 px-4 py-2.5 rounded-lg font-medium transition text-base hover:bg-blue-50 hover:text-blue-700 ${isActive ? 'bg-blue-100 text-blue-700 font-semibold' : 'text-gray-700'}`
+            `flex items-center gap-3 px-4 py-2.5 rounded-lg font-medium transition text-base hover:bg-blue-50 hover:text-blue-700 dark:hover:text-blue-300 ${isActive ? 'bg-blue-100 text-blue-700 dark:text-blue-300 font-semibold' : 'text-gray-700 dark:text-white'}`
           }
           end
         >
@@ -59,13 +59,13 @@ const Sidebar: React.FC = () => (
         </NavLink>
       ))}
       {/* Grouped nav options below REI Directory */}
-      <div className="bg-gray-50 rounded-xl mt-1 mb-3 py-1 px-1 flex flex-col gap-0.5">
+      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl mt-1 mb-3 py-1 px-1 flex flex-col gap-0.5 transition-colors duration-300">
         {navLinks.slice(2).map(link => (
           <NavLink
             key={typeof link.label === 'string' ? link.to : link.to + '-label'}
             to={link.to}
             className={({ isActive }) =>
-              `flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition text-sm hover:bg-blue-50 hover:text-blue-700 ${isActive ? 'bg-blue-100 text-blue-700 font-semibold' : 'text-gray-700'}`
+              `flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition text-sm hover:bg-blue-50 hover:text-blue-700 dark:hover:text-blue-300 ${isActive ? 'bg-blue-100 text-blue-700 dark:text-blue-300 font-semibold' : 'text-gray-700 dark:text-white'}`
             }
             end
           >
@@ -79,14 +79,14 @@ const Sidebar: React.FC = () => (
     {/* Feedback and bottom section grouped */}
     <div className="flex flex-col gap-2 px-3 pb-2 mb-2">
       <div className="mb-1">
-        <button className="w-full flex items-center gap-2 bg-blue-50 text-gray-700 font-medium py-2 px-3 rounded-lg hover:bg-blue-100 transition text-base border border-blue-100">
+        <button className="w-full flex items-center gap-2 bg-blue-50 dark:bg-blue-900 text-gray-700 dark:text-gray-200 font-medium py-2 px-3 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-800 transition text-base border border-blue-100 dark:border-blue-900">
           <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M4 4h16v16l-8-4-8 4V4z" stroke="#888" strokeWidth="1.5" fill="none"/></svg>
           Feedback
         </button>
       </div>
       <div className="flex flex-col gap-2">
         {/* Onboarding card */}
-        <div className="bg-white rounded-xl shadow border border-gray-100 p-3 flex flex-col gap-2">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow border border-gray-100 dark:border-gray-800 p-3 flex flex-col gap-2 transition-colors duration-300">
           <div className="flex items-center justify-between">
             <span className="text-blue-700 font-bold text-base">Onboarding</span>
             <span className="relative w-10 h-10 flex items-center justify-center">
@@ -97,31 +97,31 @@ const Sidebar: React.FC = () => (
               <span className="absolute inset-0 flex items-center justify-center text-xs font-bold text-blue-700">90%</span>
             </span>
           </div>
-          <div className="flex items-center justify-between bg-gray-100 rounded-lg px-3 py-2 mt-1 cursor-pointer">
+          <div className="flex items-center justify-between bg-gray-100 dark:bg-gray-700 rounded-lg px-3 py-2 mt-1 cursor-pointer transition-colors duration-300">
             <span className="text-sm text-gray-800 font-medium">Complete <span className="font-bold">Public Profile</span> Information</span>
             <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="#1976D2" strokeWidth="2" strokeLinecap="round"/></svg>
           </div>
         </div>
         {/* Basic Plan card */}
-        <div className="bg-blue-50 rounded-xl px-4 py-3 flex flex-col gap-1 mt-1">
+        <div className="bg-blue-50 dark:bg-blue-900 rounded-xl px-4 py-3 flex flex-col gap-1 mt-1 transition-colors duration-300">
           <span className="text-blue-400 font-bold text-base">Basic Plan</span>
-          <span className="text-gray-700 text-sm">You are on Free Plan. Consider upgrading</span>
+          <span className="text-gray-700 dark:text-gray-200 text-sm">You are on Free Plan. Consider upgrading</span>
           <div className="flex items-center gap-2 mt-1">
-            <span className="font-bold text-gray-800 text-sm">Upgrade Plan</span>
-            <button className="text-blue-500 text-sm underline font-medium ml-1">Dismiss</button>
+            <span className="font-bold text-gray-800 dark:text-gray-100 text-sm">Upgrade Plan</span>
+            <button className="text-blue-500 dark:text-blue-300 text-sm underline font-medium ml-1">Dismiss</button>
           </div>
         </div>
       </div>
       {/* Footer links */}
       <div className="px-1 pt-2 pb-1 text-xs">
         <div className="flex flex-wrap gap-2 mb-1">
-          <a href="#" className="hover:underline text-blue-400 hover:text-blue-600 font-medium">Support</a>
-          <span className="text-blue-400">·</span>
-          <a href="#" className="hover:underline text-blue-400 hover:text-blue-600 font-medium">Privacy</a>
-          <span className="text-blue-400">·</span>
-          <a href="#" className="hover:underline text-blue-400 hover:text-blue-600 font-medium">Terms</a>
+          <a href="#" className="hover:underline text-blue-400 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium">Support</a>
+          <span className="text-blue-400 dark:text-blue-300">·</span>
+          <a href="#" className="hover:underline text-blue-400 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium">Privacy</a>
+          <span className="text-blue-400 dark:text-blue-300">·</span>
+          <a href="#" className="hover:underline text-blue-400 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium">Terms</a>
         </div>
-        <div className="text-gray-700">Copyright © 2025 · <a href="#" className="hover:underline text-blue-400 hover:text-blue-600 font-medium">REICB</a></div>
+        <div className="text-gray-700 dark:text-gray-300">Copyright © 2025 · <a href="#" className="hover:underline text-blue-400 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium">REICB</a></div>
       </div>
     </div>
   </aside>
