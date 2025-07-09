@@ -26,7 +26,7 @@ const Topbar: React.FC = () => {
   return (
     <header className="w-full h-20 bg-white shadow-sm px-1 sm:px-3 flex items-center justify-between rounded-b-lg relative z-20">
       {/* Left: Logo and Search by Transaction Button */}
-      <div className="flex items-center gap-5 min-w-fit ml-2">
+      <div className="flex items-center gap-5 min-w-fit ">
         {/* Logo image */}
         <img src={Logo} alt="ReiSearch.com logo" className="h-14 w-auto object-contain" />
         <button className="hidden sm:inline bg-yellow-400 hover:bg-yellow-500 transition px-5 py-2 text-sm font-semibold text-gray-800 rounded-full shadow whitespace-nowrap ml-2" style={{fontSize:'1.1rem'}}>
