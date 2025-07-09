@@ -9,7 +9,7 @@ const GreetingSection: React.FC = () => (
    <div className="flex-1 flex flex-col justify-between h-full">
     <span className="text-gray-800 dark:text-gray-100 text-lg font-semibold mb-1">Hey, Bereket</span>
     <span className="text-3xl font-bold text-gray-900 dark:text-white mb-0.5">73%</span>
-    <div className="w-full h-2 rounded-full bg-blue-300">
+    <div className="w-full h-2 rounded-full bg-blue-100">
       <div className="h-2 rounded-full bg-blue-500" style={{ width: '73%' }}></div>
     </div>
     <button className="flex items-center gap-1 px-2 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600 transition shadow w-fit">
@@ -25,7 +25,7 @@ const GreetingSection: React.FC = () => (
 
 
     {/* Top right: Public Info and Enable Notifications */}
-    <div className="col-span-1 row-span-3/2 flex gap-3 min-w-[270px] mt-4">
+    <div className="col-span-1 row-span-1 flex gap-3 min-w-[270px] mt-4">
       <div className="flex-1 bg-gray-100 dark:bg-gray-800 rounded-xl shadow flex flex-col items-center justify-center p-2 transition-colors duration-300">
         <span className="text-yellow-400 text-base mb-1">
           <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
@@ -46,7 +46,7 @@ const GreetingSection: React.FC = () => (
     {/* bottom section */}
 
 
-    <div className="col-span-2 row-span-3/2 bg-white dark:bg-gray-800 rounded-xl shadow p-3 flex gap-3 transition-colors duration-300">
+    <div className="col-span-2 row-span-1 bg-white dark:bg-gray-800 rounded-xl shadow p-3 flex gap-3 transition-colors duration-300">
       {/* Bottom left: Add Property */}
 
       

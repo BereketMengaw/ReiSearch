@@ -3,9 +3,14 @@ import { Search, Menu } from 'lucide-react';
 import Logo from '../../assets/logo-reisearch-bg-none.png';
 import Img from "../../assets/bereket.jpg"
 
+interface TopbarProps {
+  sidebarOpen: boolean;
+  setSidebarOpen: (open: boolean) => void;
+}
+
 const ICON_SIZE = 28; // Reduced from 36
 
-const Topbar: React.FC = () => {
+const Topbar: React.FC<TopbarProps> = ({ sidebarOpen, setSidebarOpen }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -29,7 +34,22 @@ const Topbar: React.FC = () => {
       {/* Top row: Logo and Hamburger (mobile) */}
       <div className="w-full flex items-center justify-between md:justify-start md:w-auto">
         <div className="flex items-center gap-2 sm:gap-4 min-w-fit ml-2 sm:ml-6">
-          <img src={Logo} alt="ReiSearch.com logo" className="h-8 sm:h-10 md:h-12 w-auto object-contain" />
+          {/* Mobile: Clickable logo */}
+          <img
+            src={Logo}
+            alt="ReiSearch.com logo"
+            className="h-8 sm:h-10 md:h-12 w-auto object-contain cursor-pointer md:hidden"
+            onClick={() => {
+              console.log('Logo clicked, opening sidebar');
+              setSidebarOpen(true);
+            }}
+          />
+          {/* Desktop: Non-clickable logo */}
+          <img
+            src={Logo}
+            alt="ReiSearch.com logo"
+            className="hidden md:block h-8 sm:h-10 md:h-12 w-auto object-contain"
+          />
           <button className="hidden sm:inline bg-yellow-400 transition px-2 sm:px-3 py-1.5 sm:py-2 text-xs font-semibold text-white rounded-full shadow whitespace-nowrap ml-2 dark:bg-yellow-500 dark:text-gray-900" style={{fontSize:'0.85rem'}}>
             Staging / homedispo...
           </button>

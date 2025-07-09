@@ -2,6 +2,11 @@
 import { NavLink } from 'react-router-dom';
 import React from 'react';
 
+interface SidebarProps {
+  sidebarOpen: boolean;
+  setSidebarOpen: (open: boolean) => void;
+}
+
 const navLinks = [
   { to: '/', label: 'Dashboard', icon: (
     <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="6" fill="#f3f3f3"/><path d="M7 7h10v10H7z" fill="#222"/></svg>
@@ -39,9 +44,9 @@ const DropdownArrow = () => (
   <svg width="22" height="22" fill="none" viewBox="0 0 20 20" className="ml-auto"><path d="M6 8l4 4 4-4" stroke="#222" strokeWidth="1.5" strokeLinecap="round"/></svg>
 );
 
-const Sidebar: React.FC = () => (
-  <React.Fragment>
-    <aside className="hidden mt-14 md:flex fixed mt-5 mb-5 left-3 top-10 bottom-0 z-30 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 w-60 h-screen rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 flex flex-col justify-between p-0 ml-2 max-h-[calc(100vh-5rem)] transition-colors duration-300">
+const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen }) => (
+  <>
+    <aside className="hidden mt-10 md:flex fixed mt-5 mb-5 left-3 top-10 bottom-0 z-30 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 w-60 h-screen rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 flex flex-col justify-between p-0 ml-2 max-h-[calc(100vh-5rem)] transition-colors duration-300">
       {/* Navigation */}
       <nav className="flex flex-col gap-1 pt-3 px-2">
         {/* REI Directory (standalone) */}
@@ -126,22 +131,57 @@ const Sidebar: React.FC = () => (
         </div>
       </div>
     </aside>
-    {/* Mobile footer nav: only visible on mobile */}
-    <nav className="fixed bottom-0 left-0 right-0 z-40 flex md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-lg justify-around py-2">
-      <NavLink to="/" className={({ isActive }) => `flex flex-col items-center text-xs ${isActive ? 'text-blue-600' : 'text-gray-500 dark:text-gray-300'}` } end>
-        <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="6" fill="#f3f3f3"/><path d="M7 7h10v10H7z" fill="#222"/></svg>
-        Dashboard
-      </NavLink>
-      <NavLink to="/rei-directory" className={({ isActive }) => `flex flex-col items-center text-xs ${isActive ? 'text-blue-600' : 'text-gray-500 dark:text-gray-300'}` } end>
-        <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="3" fill="#f3f3f3"/><rect x="7" y="8" width="10" height="2" rx="1" fill="#222"/><rect x="7" y="12" width="7" height="2" rx="1" fill="#222"/></svg>
-        Directory
-      </NavLink>
-      <NavLink to="/profile" className={({ isActive }) => `flex flex-col items-center text-xs ${isActive ? 'text-blue-600' : 'text-gray-500 dark:text-gray-300'}` } end>
-        <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="#f3f3f3"/><circle cx="12" cy="8" r="3" fill="#222"/><rect x="6" y="15" width="12" height="5" rx="2.5" fill="#f3f3f3"/><rect x="8" y="16" width="8" height="2" rx="1" fill="#222"/></svg>
-        Profile
-      </NavLink>
-    </nav>
-  </React.Fragment>
+    {/* Mobile slide-in sidebar */}
+    <div className={`fixed inset-0 z-50 md:hidden transition-all duration-300 ${sidebarOpen ? 'block' : 'pointer-events-none'}`} style={{zIndex: 1000}}>
+      {/* Overlay */}
+      <div
+        className={`absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 ${sidebarOpen ? 'opacity-100' : 'opacity-0'}`}
+        onClick={() => setSidebarOpen(false)}
+        style={{zIndex: 1001}}
+      />
+      {/* Sidebar panel */}
+      <aside className={`absolute top-0 left-0 h-full w-64 bg-white dark:bg-gray-900 shadow-lg border-r border-gray-200 dark:border-gray-800 transform transition-transform duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
+        style={{zIndex: 1002}}>
+        <button className="absolute top-4 right-4 text-gray-700 dark:text-gray-200 text-2xl" onClick={() => setSidebarOpen(false)} aria-label="Close sidebar">&times;</button>
+        {/* Navigation (reuse existing nav) */}
+        <nav className="flex flex-col gap-1 pt-3 px-2 mt-10">
+          {/* REI Directory (standalone) */}
+          {navLinks.slice(0, 2).map(link => (
+            <NavLink
+              key={typeof link.label === 'string' ? link.to : link.to + '-label'}
+              to={link.to}
+              className={({ isActive }) =>
+                `flex items-center gap-3 px-4 py-2.5 rounded-lg font-medium transition text-base hover:bg-blue-50 hover:text-blue-700 dark:hover:text-blue-300 ${isActive ? 'bg-blue-100 text-blue-700 dark:text-blue-300 font-semibold' : 'text-gray-700 dark:text-white'}`
+              }
+              end
+              onClick={() => setSidebarOpen(false)}
+            >
+              {link.icon}
+              {link.label}
+              {link.dropdown && <DropdownArrow />}
+            </NavLink>
+          ))}
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl mt-1 mb-3 py-1 px-1 flex flex-col gap-0.5 transition-colors duration-300">
+            {navLinks.slice(2).map(link => (
+              <NavLink
+                key={typeof link.label === 'string' ? link.to : link.to + '-label'}
+                to={link.to}
+                className={({ isActive }) =>
+                  `flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition text-sm hover:bg-blue-50 hover:text-blue-700 dark:hover:text-blue-300 ${isActive ? 'bg-blue-100 text-blue-700 dark:text-blue-300 font-semibold' : 'text-gray-700 dark:text-white'}`
+                }
+                end
+                onClick={() => setSidebarOpen(false)}
+              >
+                {link.icon && React.cloneElement(link.icon, { width: 18, height: 18 })}
+                {link.label}
+                {link.dropdown && <DropdownArrow />}
+              </NavLink>
+            ))}
+          </div>
+        </nav>
+      </aside>
+    </div>
+  </>
 );
 
 export default Sidebar; 
