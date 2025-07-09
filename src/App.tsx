@@ -1,6 +1,7 @@
 import Topbar from './components/Topbar/Topbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import GreetingSection from './components/GreetingSection/GreetingSection';
+import PropertySection from './components/PropertySection/PropertySection';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react';
 
@@ -21,7 +22,12 @@ const App: React.FC = () => {
           {/* Main routed content */}
           <main className="flex-1 p-4">
             <Routes>
-              <Route path="/" element={<GreetingSection />} />
+              <Route path="/" element={
+                <>
+                  <GreetingSection />
+                  <PropertySection />
+                </>
+              } />
               <Route path="/rei-directory" element={<Placeholder title="REI Directory" />} />
               <Route path="/feed" element={<Placeholder title="Feed" />} />
               <Route path="/profile" element={<Placeholder title="Profile" />} />
