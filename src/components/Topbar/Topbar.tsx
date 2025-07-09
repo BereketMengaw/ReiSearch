@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Search, Menu } from 'lucide-react';
 import Logo from '../../assets/logo-reisearch.jpg';
+import Img from "../../assets/bereket.jpg"
 
 const ICON_SIZE = 28; // Reduced from 36
 
@@ -97,8 +98,8 @@ const Topbar: React.FC = () => {
           ))}
         </svg>
         <button className="flex items-center gap-2 pl-2 pr-4 py-1.5 rounded-lg border border-blue-500 bg-white hover:bg-blue-50 transition shadow-sm"> {/* gap-2, pr-4, py-1.5 */}
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" className="w-8 h-8 rounded-md object-cover border border-blue-500" /> {/* w-8 h-8 */}
-          <span className="font-bold text-blue-700 text-base">Abrham</span> {/* text-base */}
+          <img src={Img} alt="User" className="w-8 h-8 rounded-md object-cover border border-blue-500" /> {/* w-8 h-8 */}
+          <span className="font-bold text-blue-700 text-base">Bereket</span> {/* text-base */}
           <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 8L10 12L14 8" stroke="#1976D2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </button>
       </div>
@@ -146,8 +147,8 @@ const Topbar: React.FC = () => {
             </svg>
           </div>
           <button className="flex items-center gap-2 pl-2 pr-4 py-1.5 rounded-lg border border-blue-500 bg-white hover:bg-blue-50 transition shadow-sm">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" className="w-8 h-8 rounded-md object-cover border border-blue-500" />
-            <span className="font-bold text-blue-700 text-base">Abrham</span>
+            <img src={Img} alt="User" className="w-8 h-8 rounded-md object-cover border border-blue-500" />
+            <span className="font-bold text-blue-700 text-base">Bereket</span>
             <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 8L10 12L14 8" stroke="#1976D2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </button>
         </div>

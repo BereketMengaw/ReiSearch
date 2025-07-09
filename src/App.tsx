@@ -4,6 +4,7 @@ import GreetingSection from './components/GreetingSection/GreetingSection';
 import PropertySection from './components/PropertySection/PropertySection';
 import RecommendationsBox from './components/RecommendationsBox/RecommendationsBox';
 import ProfileStatusTiles from './components/ProfileStatusTiles/ProfileStatusTiles';
+import PropertyList from './components/PropertyList/PropertyList';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react';
 
@@ -33,6 +34,7 @@ const App: React.FC = () => {
                       <RecommendationsBox />
                     </div>
                     <PropertySection />
+                    <PropertyList />
                   </>
                 } />
                 <Route path="/rei-directory" element={<Placeholder title="REI Directory" />} />
