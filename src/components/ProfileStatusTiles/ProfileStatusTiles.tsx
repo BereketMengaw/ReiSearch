@@ -70,8 +70,14 @@ const dotIcon = () => (
 const ProfileStatusTiles: React.FC = () => (
   <section className="bg-white dark:bg-black rounded-2xl shadow p-4 mt-20 w-full max-w-xs flex flex-col gap-2">
     <div className="flex justify-between items-center mb-2">
-      <h3 className="font-semibold text-[13px] text-gray-900">Complete Your Home Dispo Setup</h3>
-      <a href="#" className="text-xs text-blue-500 font-semibold hover:underline">Learn More</a>
+      <h3 className="font-semibold text-[13px] text-gray-900 dark:text-white">Complete Your Home Dispo Setup</h3>
+      <a href="#" className="flex items-center gap-1 text-xs text-blue-500 font-semibold hover:underline">
+        <svg width="12" height="12" fill="none" viewBox="0 0 12 12">
+          <circle cx="6" cy="6" r="5.5" stroke="#3B82F6" strokeWidth="1" fill="none"/>
+          <polygon points="4,3 9,6 4,9" fill="#3B82F6"/>
+        </svg>
+        Learn More
+      </a>
     </div>
     {sections.map((section, idx) => (
       <div
