@@ -177,9 +177,9 @@ const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen }) => (
                 {link.dropdown && <DropdownArrow />}
               </NavLink>
             ))}
-          </div>
-        </nav>
-      </aside>
+      </div>
+    </nav>
+  </aside>
     </div>
   </>
 );
