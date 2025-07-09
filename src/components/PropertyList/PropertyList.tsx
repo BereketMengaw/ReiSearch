@@ -20,7 +20,7 @@ const PropertyList: React.FC = () => (
   <div className="w-full overflow-x-auto py-2 ml-[272px]">
     {/* Tabs Bar */}
     <div className="flex items-center gap-2 mb-2">
-      {tabs.map((tab, idx) => (
+      {tabs.map((tab, ) => (
         <button
           key={tab.label}
           className={`px-3 py-1 rounded font-medium text-xs border transition-all duration-150

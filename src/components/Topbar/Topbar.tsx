@@ -25,12 +25,12 @@ const Topbar: React.FC = () => {
   }, [menuOpen]);
 
   return (
-    <header className="w-full h-18 bg-white shadow-sm px-1 sm:px-3 flex items-center justify-between rounded-b-lg relative z-20"> {/* h-16 instead of h-20 */}
+    <header className="w-full h-18 bg-white shadow-sm px-1 sm:px-3 flex items-center justify-between rounded-b-lg fixed top-0 left-0 right-0 z-50"> {/* fixed topbar */}
       {/* Left: Logo and Search by Transaction Button */}
       <div className="flex items-center gap-4 min-w-fit ">
         {/* Logo image */}
         <img src={Logo} alt="ReiSearch.com logo" className="h-10 w-auto object-contain" /> {/* h-10 instead of h-14 */}
-        <button className="hidden sm:inline bg-yellow-400 hover:bg-yellow-500 transition px-4 py-1.5 text-xs font-semibold text-gray-800 rounded-full shadow whitespace-nowrap ml-2" style={{fontSize:'1rem'}}>
+        <button className="hidden sm:inline bg-yellow-400 hover:bg-yellow-500 transition px-4 py-1.5 text-xs font-semibold text-white rounded-full shadow whitespace-nowrap ml-2" style={{fontSize:'1rem'}}>
           Staging / homedispo...
         </button>
       </div>

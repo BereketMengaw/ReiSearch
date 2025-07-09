@@ -68,12 +68,12 @@ const dotIcon = () => (
 );
 
 const ProfileStatusTiles: React.FC = () => (
-  <section className="bg-white rounded-2xl shadow p-4 w-full max-w-xs flex flex-col gap-2">
+  <section className="bg-white rounded-2xl shadow p-4 w-full max-w-xs flex flex-col gap-2  mt-12">
     <div className="flex justify-between items-center mb-2">
       <h3 className="font-semibold text-[13px] text-gray-900">Complete Your Home Dispo Setup</h3>
       <a href="#" className="text-xs text-blue-500 font-semibold hover:underline">Learn More</a>
     </div>
-    {sections.map((section, idx) => (
+    {sections.map((section, ) => (
       <div
         key={section.title}
         className={`rounded-xl p-3 mb-1 last:mb-0 relative overflow-hidden`}
