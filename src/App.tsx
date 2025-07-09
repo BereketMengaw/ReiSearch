@@ -30,7 +30,7 @@ const App: React.FC = () => {
 
 
 
-            {/* Main routed content */}
+            {/* Main routed content  */}
             <main className="flex-1 p-4">
               <Routes>
                 <Route path="/" element={
@@ -54,13 +54,15 @@ const App: React.FC = () => {
                 <Route path="/logout" element={<Placeholder title="Log Out" />} />
               </Routes>
             </main>
+           
 
 
 
-            {/* Right sidebar: ProfileStatusTiles at the top */}
+            {/* Right sidebar: ProfileStatusTiles at the top 
             <div className="flex flex-col items-end mt-0 ml-4" style={{minWidth: '260px'}}>
               <ProfileStatusTiles />
             </div>
+            */}
 
 
           </div>
