@@ -67,7 +67,7 @@ const GreetingSection: React.FC = () => {
       {/* Bottom left: Add Property */}
 
       
-      <div className="flex-1 bg-purple-100 dark:bg-purple-900 rounded-xl shadow flex flex-col items-center justify-center p-2 md:p-3 min-w-0 md:min-w-[120px] transition-colors duration-300 min-h-[160px]">
+      <div className="flex-1 bg-purple-200 dark:bg-purple-900 rounded-xl shadow flex flex-col items-center justify-center p-2 md:p-3 min-w-0 md:min-w-[120px] transition-colors duration-300 min-h-[160px]">
   <span className="text-purple-400 text-lg mb-2">
     <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
       {/* Transparent inside, black ring */}
@@ -82,17 +82,17 @@ const GreetingSection: React.FC = () => {
 
 
       {/* Bottom center: REI Directory */}
-      <div className="flex-1 bg-blue-100 dark:bg-blue-900 rounded-xl shadow flex flex-col items-center justify-center p-2 md:p-3 min-w-0 md:min-w-[120px] border border-blue-100 dark:border-blue-900 transition-colors duration-300 relative overflow-hidden min-h-[160px]">
+      <div className="flex-1 bg-blue-200 dark:bg-blue-900 rounded-xl shadow flex flex-col items-center justify-center p-2 md:p-3 min-w-0 md:min-w-[120px] border border-blue-100 dark:border-blue-900 transition-colors duration-300 relative overflow-hidden min-h-[160px]">
         {/* Faded logo background */}
         <img src={Logo} alt="ReiSearch Logo" className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-32 md:h-32 object-contain opacity-20 pointer-events-none select-none" />
         {/* Foreground content */}
         <span className="relative z-10 text-gray-500 dark:text-gray-300 top-1/4 text-xs font-semibold py-4 md:py-6 block text-center">Explore ReiDirectory</span>
       </div>
       {/* Bottom right: Explore Messaging */}
-      <div className="flex-1 bg-green-100 dark:bg-green-900 rounded-xl shadow flex flex-col items-center justify-center p-2 md:p-3 min-w-0 md:min-w-[120px] transition-colors duration-300 min-h-[160px]">
+      <div className="flex-1 bg-green-200 dark:bg-green-900 rounded-xl shadow flex flex-col items-center justify-center p-2 md:p-3 min-w-0 md:min-w-[120px] transition-colors duration-300 min-h-[160px]">
         
         
-        <span className="text-blue-600 text-lg mb-2">
+        <span className="text-blue-800 text-lg mb-2">
           <svg width="24" height="24" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
             <path d="M29,16V28a1,1,0,0,1-1,1H4a1,1,0,0,1-1-1V4A1,1,0,0,1,4,3H16a1,1,0,0,1,0,2H5V27H27V16a1,1,0,0,1,2,0Zm-18.54.13L22.29,4.29a3.83,3.83,0,0,1,5.42,5.42L15.87,21.54a1,1,0,0,1-.38.24L9.33,23.94A1,1,0,0,1,9,24a1,1,0,0,1-.94-1.33l2.16-6.16A1,1,0,0,1,10.46,16.13Zm.17,5.24,4-1.4L26.29,8.29a1.82,1.82,0,0,0-2.58-2.58L12,17.38Z" fill="#2563eb" className="dark:fill-blue-400"/>
           </svg>

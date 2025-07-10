@@ -7,7 +7,7 @@ const RecommendationsBox: React.FC = () => (
       <a href="#" className="text-[10px] text-blue-500 font-semibold hover:underline">Explore</a>
     </div>
     <div className="flex-1 flex ">
-      <span className="text-[11px] text-gray-500 dark:text-gray-300 p-12">No recommendations yet.</span>
+      <span className="text-[13px] text-gray-900 dark:text-gray-300 p-2">No recommendations at the moment .</span>
     </div>
   </section>
 );

@@ -18,7 +18,7 @@ const PlayButton: React.FC<PlayButtonProps> = ({ width = 16, height = 16, classN
     <polygon
       points="6,5 12,8 6,11"
       fill="none"
-      stroke="#3B82F6"
+      stroke="#93c5fd" // Tailwind blue-300
       strokeWidth="2"
       strokeLinejoin="round"
       strokeLinecap="round"
