@@ -42,7 +42,7 @@ const PropertySection: React.FC = () => (
     </div>
 
     {/* Expand Your Network (with Explore image) */}
-    <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow p-4 lg:p-6 flex flex-col min-h-[220px] lg:min-h-[260px] transition-colors duration-300 w-full">
+    <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow p-6 lg:p-6 flex flex-col min-h-[220px] lg:min-h-[260px] transition-colors duration-300 w-full">
       <div className="flex justify-between items-start mb-4">
         <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-100">Expand Your Network</h3>
         <a href="#" className="text-sm text-blue-500 font-semibold hover:underline flex items-center"><PlayButton width={16} height={16} className="mr-1" /> Learn More</a>
