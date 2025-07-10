@@ -23,8 +23,23 @@ const navLinks = [
   { to: '/network', label: 'Network', icon: (
     <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><circle cx="7" cy="12" r="2.5" fill="#f3f3f3" stroke="#222" strokeWidth="1.5"/><circle cx="17" cy="12" r="2.5" fill="#f3f3f3" stroke="#222" strokeWidth="1.5"/><circle cx="12" cy="8" r="2.5" fill="#f3f3f3" stroke="#222" strokeWidth="1.5"/></svg>
   ), dropdown: true },
-  { to: '/home-dispo', label: 'HOME DISPO', icon: (
-    <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path d="M3 12L12 5l9 7" stroke="#222" strokeWidth="2"/><rect x="6" y="12" width="12" height="7" rx="2" fill="#f3f3f3" stroke="#222" strokeWidth="1.5"/></svg>
+  { to: '/home-dispo', label: (
+    <span className="font-bold text-base tracking-tight">
+      <span className="text-blue-400">HOME</span> <span className="text-gray-800 dark:text-gray-100">DISPO</span>
+    </span>
+  ), icon: (
+    <svg width="32" height="32" fill="none" viewBox="0 0 32 32">
+      {/* Cart base */}
+      <rect x="7" y="18" width="18" height="7" rx="2.5" fill="#f3f3f3" stroke="#222" strokeWidth="1.5"/>
+      <circle cx="12" cy="27" r="1.5" fill="#bcdffb" stroke="#1976d2" strokeWidth="1.2"/>
+      <circle cx="22" cy="27" r="1.5" fill="#bcdffb" stroke="#1976d2" strokeWidth="1.2"/>
+      {/* Cart handle */}
+      <path d="M7 18L5 10" stroke="#1976d2" strokeWidth="1.2"/>
+      {/* House roof */}
+      <path d="M11 14L16 10L21 14" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round"/>
+      {/* House body (optional, subtle) */}
+      <rect x="13.5" y="14" width="5" height="4" rx="1" fill="#e3f0fb" stroke="#60a5fa" strokeWidth="1"/>
+    </svg>
   ), dropdown: true },
   { to: '/properties', label: 'Properties', icon: (
     <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path d="M3 12L12 5l9 7" stroke="#222" strokeWidth="2"/><rect x="6" y="12" width="12" height="7" rx="2" fill="#f3f3f3" stroke="#222" strokeWidth="1.5"/></svg>
