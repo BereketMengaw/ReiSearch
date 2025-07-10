@@ -46,7 +46,7 @@ const DropdownArrow = () => (
 
 const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen }) => (
   <>
-    <aside className="hidden mt-10 md:flex fixed mt-15 mb-5 left-3 top-10 bottom-0 z-30 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 w-60 h-screen rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 flex flex-col justify-between p-0 ml-2 max-h-[calc(100vh-5rem)] transition-colors duration-300">
+    <aside className="hidden mt-10 lg:flex fixed mt-15 mb-5 left-3 top-10 bottom-0 z-30 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 w-60 h-screen rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 flex flex-col justify-between p-0 ml-2 max-h-[calc(100vh-5rem)] transition-colors duration-300">
       {/* Navigation */}
       <nav className="flex flex-col gap-1 pt-3 px-2">
         {/* REI Directory (standalone) */}
@@ -132,7 +132,7 @@ const Sidebar: React.FC<SidebarProps> = ({ sidebarOpen, setSidebarOpen }) => (
       </div>
     </aside>
     {/* Mobile slide-in sidebar */}
-    <div className={`fixed inset-0 z-50 md:hidden transition-all duration-300 ${sidebarOpen ? 'block' : 'pointer-events-none'}`} style={{zIndex: 1000}}>
+    <div className={`fixed inset-0 z-50 lg:hidden transition-all duration-300 ${sidebarOpen ? 'block' : 'pointer-events-none'}`} style={{zIndex: 1000}}>
       {/* Overlay */}
       <div
         className={`absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 ${sidebarOpen ? 'opacity-100' : 'opacity-0'}`}

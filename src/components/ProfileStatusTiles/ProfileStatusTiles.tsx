@@ -68,7 +68,7 @@ const dotIcon = () => (
 );
 
 const ProfileStatusTiles: React.FC = () => (
-  <section className="hidden md:flex bg-white dark:bg-black rounded-2xl shadow p-4 mt-20 w-full max-w-xs flex-col gap-2">
+  <section className="hidden lg:flex bg-white dark:bg-black rounded-2xl shadow p-4 mt-20 w-full max-w-xs flex-col gap-2">
     <div className="flex justify-between items-center mb-2">
       <h3 className="font-semibold text-[13px] text-gray-900">Complete Your Home Dispo Setup</h3>
       <a href="#" className="text-xs text-blue-500 font-semibold hover:underline">Learn More</a>

@@ -29,15 +29,15 @@ const Topbar: React.FC<TopbarProps> = ({ setSidebarOpen }) => {
   }, [menuOpen]);
 
   return (
-    <header className="w-full h-16 sm:h-18 bg-white dark:bg-gray-900 shadow-sm dark:shadow-lg px-2 sm:px-4 flex flex-col md:flex-row items-center md:items-center justify-between rounded-b-lg fixed top-0 left-0 right-0 z-50 transition-colors duration-300">
+    <header className="w-full h-16 sm:h-18 bg-white dark:bg-gray-900 shadow-sm dark:shadow-lg px-2 sm:px-4 flex flex-col lg:flex-row items-center lg:items-center justify-between rounded-b-lg fixed top-0 left-0 right-0 z-50 transition-colors duration-300">
       {/* Top row: Logo and Hamburger (mobile) */}
-      <div className="w-full flex items-center justify-between md:justify-start md:w-auto">
+      <div className="w-full flex items-center justify-between lg:justify-start lg:w-auto">
         <div className="flex items-center gap-2 sm:gap-4 min-w-fit ml-2 sm:ml-6">
           {/* Mobile: Clickable logo */}
           <img
             src={Logo}
             alt="ReiSearch.com logo"
-            className="h-8 sm:h-10 md:h-12 w-auto object-contain cursor-pointer md:hidden"
+            className="h-8 sm:h-10 lg:h-12 w-auto object-contain cursor-pointer lg:hidden"
             onClick={() => {
               console.log('Logo clicked, opening sidebar');
               setSidebarOpen(true);
@@ -47,14 +47,14 @@ const Topbar: React.FC<TopbarProps> = ({ setSidebarOpen }) => {
           <img
             src={Logo}
             alt="ReiSearch.com logo"
-            className="hidden md:block h-8 sm:h-10 md:h-12 w-auto object-contain"
+            className="hidden lg:block h-8 sm:h-10 lg:h-12 w-auto object-contain"
           />
           <button className="hidden sm:inline bg-yellow-400 transition px-2 sm:px-3 py-1.5 sm:py-2 text-xs font-semibold text-white rounded-full shadow whitespace-nowrap ml-2 dark:bg-yellow-500 dark:text-gray-900" style={{fontSize:'0.85rem'}}>
             Staging / homedispo...
           </button>
         </div>
         {/* Hamburger for mobile */}
-        <div className="md:hidden flex items-center">
+        <div className="lg:hidden flex items-center">
           <button
             className="flex items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition ml-2"
             onClick={() => setMenuOpen(v => !v)}
@@ -65,8 +65,8 @@ const Topbar: React.FC<TopbarProps> = ({ setSidebarOpen }) => {
         </div>
       </div>
       {/* Center: Search Bar (below logo on mobile, center on desktop) */}
-      <div className="w-full md:w-auto flex justify-center md:justify-center mt-2 md:mt-0 order-2 md:order-none">
-        <div className="flex items-center bg-gray-100 dark:bg-gray-800 rounded-full px-2 sm:px-3 py-0.5 w-full max-w-xs sm:max-w-md md:max-w-lg border border-gray-200 dark:border-gray-700 transition-colors duration-300">
+      <div className="w-full lg:w-auto flex justify-center lg:justify-center mt-2 lg:mt-0 order-2 lg:order-none">
+        <div className="flex items-center bg-gray-100 dark:bg-gray-800 rounded-full px-2 sm:px-3 py-0.5 w-full max-w-xs sm:max-w-md lg:max-w-lg border border-gray-200 dark:border-gray-700 transition-colors duration-300">
           {/* ... search icon, divider, input, search button ... */}
           <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2 font-bold">
             <defs>
@@ -98,7 +98,7 @@ const Topbar: React.FC<TopbarProps> = ({ setSidebarOpen }) => {
         </div>
       </div>
       {/* Right: Desktop icons/profile/dark mode */}
-      <div className="hidden md:flex items-center gap-4 lg:gap-6 min-w-fit order-3 md:order-none">
+      <div className="hidden lg:flex items-center gap-4 lg:gap-6 min-w-fit order-3 lg:order-none">
         {/* ... icons ... */}
         <svg width={ICON_SIZE} height={ICON_SIZE} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="4" y="6" width="24" height="16" rx="6" fill="#2196F3"/>
@@ -138,7 +138,7 @@ const Topbar: React.FC<TopbarProps> = ({ setSidebarOpen }) => {
       {menuOpen && (
         <div
           ref={menuRef}
-          className="md:hidden absolute right-2 top-16 w-64 bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 ease-in-out z-30"
+          className="lg:hidden absolute right-2 top-16 w-64 bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 ease-in-out z-30"
           style={{ boxShadow: '0 8px 32px 0 rgba(60,60,100,0.12)' }}
         >
           <div className="flex flex-col gap-3 p-3">
@@ -205,11 +205,20 @@ const DarkModeToggle: React.FC = () => {
 
   return (
     <button
-      onClick={() => setIsDark((v) => !v)}
-      className="ml-2 p-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+      onClick={() => setIsDark(!isDark)}
+      className="flex items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition"
       aria-label="Toggle dark mode"
     >
-      {isDark ? '🌙' : '☀️'}
+      {isDark ? (
+        <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5" fill="#FFB300"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#FFB300" strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+      ) : (
+        <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#374151" stroke="#374151" strokeWidth="2"/>
+        </svg>
+      )}
     </button>
   );
 };

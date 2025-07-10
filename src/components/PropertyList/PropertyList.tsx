@@ -17,9 +17,9 @@ const properties = [
 ];
 
 const PropertyList: React.FC = () => (
-  <div className="w-full py-2 ml-0 md:ml-[272px] bg-transparent dark:bg-gray-900 transition-colors duration-300 px-0 md:px-0 overflow-x-hidden">
+  <div className="w-full py-2 ml-0 lg:ml-[272px] bg-transparent dark:bg-gray-900 transition-colors duration-300 px-0 lg:px-0 overflow-x-hidden">
     {/* Tabs Bar */}
-    <div className="flex flex-wrap md:flex-nowrap items-center gap-2 mb-2">
+    <div className="flex flex-wrap lg:flex-nowrap items-center gap-2 mb-2">
       {tabs.map((tab, ) => (
         <button
           key={tab.label}
@@ -33,10 +33,10 @@ const PropertyList: React.FC = () => (
     {/* Separator line */}
     <div className="w-full h-px bg-gray-400 dark:bg-gray-700 mb-3 transition-colors duration-300" />
     {/* Property Cards */}
-    <div className="flex flex-col gap-4 md:flex-row md:gap-4 min-w-0 md:min-w-max md:overflow-x-auto">
+    <div className="flex flex-col gap-4 lg:flex-row lg:gap-4 min-w-0 lg:min-w-max lg:overflow-x-auto">
       {properties.map((property) => (
-        <div key={property.id} className="relative w-full md:w-72 h-56 rounded-xl shadow bg-white dark:bg-gray-800 flex-shrink-0 transition-colors duration-300">
-          <img src={property.image} alt={property.price} className="w-full h-40 md:h-full object-cover rounded-xl" />
+        <div key={property.id} className="relative w-full lg:w-72 h-56 rounded-xl shadow bg-white dark:bg-gray-800 flex-shrink-0 transition-colors duration-300">
+          <img src={property.image} alt={property.price} className="w-full h-40 lg:h-full object-cover rounded-xl" />
           <span className="absolute top-2 left-2 bg-black bg-opacity-60 text-white text-xs font-bold px-2 py-0.5 rounded">{property.price}</span>
           <span className="absolute top-2 right-2">
             <svg width="20" height="20" fill="none" viewBox="0 0 24 24">

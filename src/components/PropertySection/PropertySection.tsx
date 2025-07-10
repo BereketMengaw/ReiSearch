@@ -8,9 +8,9 @@ const playIcon = (
 );
 
 const PropertySection: React.FC = () => (
-  <section className="w-full max-w-7xl ml-0 md:ml-[272px] grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5 mb-2 md:mb-4 px-0 md:px-0">
+  <section className="w-full max-w-7xl ml-0 lg:ml-[272px] grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-5 mb-2 lg:mb-4 px-0 lg:px-0">
     {/* How to Add a Property */}
-    <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow p-4 md:p-6 flex flex-col min-h-[260px] md:min-h-[320px] transition-colors duration-300 w-full">
+    <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow p-4 lg:p-6 flex flex-col min-h-[260px] lg:min-h-[320px] transition-colors duration-300 w-full">
       <div className="flex justify-between items-start mb-4">
         <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-100">How to Add a Property</h3>
         <a href="#" className="text-sm text-blue-500 font-semibold hover:underline flex items-center">{playIcon} Learn More</a>
@@ -27,7 +27,7 @@ const PropertySection: React.FC = () => (
       <a href="#" className="mt-6 text-sm text-blue-500 font-semibold hover:underline flex items-center">{playIcon} Learn More</a>
     </div>
     {/* Add New Property */}
-    <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow p-4 md:p-6 flex flex-col min-h-[220px] md:min-h-[260px] transition-colors duration-300 w-full">
+    <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow p-4 lg:p-6 flex flex-col min-h-[220px] lg:min-h-[260px] transition-colors duration-300 w-full">
       <div className="flex justify-between items-start mb-4">
         <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-100">Add New Property</h3>
         <a href="#" className="text-sm text-blue-500 font-semibold hover:underline flex items-center">{playIcon} Learn More</a>
@@ -46,7 +46,7 @@ const PropertySection: React.FC = () => (
     </div>
 
     {/* Expand Your Network (with Explore image) */}
-    <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow p-4 md:p-6 flex flex-col min-h-[220px] md:min-h-[260px] transition-colors duration-300 w-full">
+    <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow p-4 lg:p-6 flex flex-col min-h-[220px] lg:min-h-[260px] transition-colors duration-300 w-full">
       <div className="flex justify-between items-start mb-4">
         <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-100">Expand Your Network</h3>
         <a href="#" className="text-sm text-blue-500 font-semibold hover:underline flex items-center">{playIcon} Learn More</a>

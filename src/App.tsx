@@ -21,17 +21,17 @@ const App: React.FC = () => {
         <Topbar setSidebarOpen={setSidebarOpen} />
 
         {/* Content row: Sidebar, main content, and right sidebar */}
-        <div className="flex flex-col md:flex-row flex-1 w-full pt-2 md:pt-4 px-0 md:px-0 overflow-x-hidden">
+        <div className="flex flex-col lg:flex-row flex-1 w-full pt-2 lg:pt-4 px-0 lg:px-0 overflow-x-hidden">
           {/* Sidebar on the left, below Topbar */}
           <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
           {/* Main content and right sidebar */}
-          <div className="flex flex-col md:flex-row flex-1">
+          <div className="flex flex-col lg:flex-row flex-1">
             {/* Main routed content */}
-            <main className="flex-1 p-2 md:p-4">
+            <main className="flex-1 p-2 lg:p-4">
               <Routes>
                 <Route path="/" element={
                   <>
-                    <div className="flex flex-col md:flex-row gap-3 md:gap-24 mb-2 md:mb-4">
+                    <div className="flex flex-col lg:flex-row gap-3 lg:gap-24 mb-2 lg:mb-4">
                       <GreetingSection />
                       <RecommendationsBox />
                     </div>
@@ -51,7 +51,7 @@ const App: React.FC = () => {
               </Routes>
             </main>
             {/* Right sidebar: ProfileStatusTiles at the top */}
-            <div className="hidden md:flex flex-col items-end mt-0 ml-4" style={{minWidth: '260px'}}>
+            <div className="hidden lg:flex flex-col items-end mt-0 ml-4" style={{minWidth: '260px'}}>
               <ProfileStatusTiles />
             </div>
           </div>
