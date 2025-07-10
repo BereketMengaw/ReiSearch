@@ -28,7 +28,7 @@ const PropertySection: React.FC = () => (
         <a href="#" className="text-sm text-blue-500 font-semibold hover:underline flex items-center"><PlayButton width={16} height={16} className="mr-1" /> Learn More</a>
       </div>
       <div className="flex-1 flex flex-col justify-center items-center">
-        <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl flex flex-col items-center justify-center w-full h-36 transition-colors duration-300">
+        <label htmlFor="property-upload" className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl flex flex-col items-center justify-center w-full h-36 transition-colors duration-300 cursor-pointer">
           <span className="text-gray-400 dark:text-gray-300 mb-2">
             <svg width="36" height="36" fill="none" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="11" stroke="#d1d5db" strokeWidth="2" fill="#f9fafb" />
@@ -36,7 +36,8 @@ const PropertySection: React.FC = () => (
             </svg>
           </span>
           <span className="text-gray-800 dark:text-gray-100 text-lg font-bold">Upload Property</span>
-        </div>
+          <input id="property-upload" type="file" className="hidden" />
+        </label>
       </div>
     </div>
 

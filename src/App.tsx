@@ -16,10 +16,9 @@ const App: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 font-sans flex flex-col transition-colors duration-300">
+      <div className="min-h-screen bg-gray-250 dark:bg-gray-900 font-sans flex flex-col transition-colors duration-300">
         {/* Topbar at the top */}
         <Topbar setSidebarOpen={setSidebarOpen} />
-
         {/* Content row: Sidebar, main content, and right sidebar */}
         <div className="flex flex-col lg:flex-row flex-1 w-full pt-2 lg:pt-4 px-0 lg:px-0 overflow-x-hidden">
           {/* Sidebar on the left, below Topbar */}

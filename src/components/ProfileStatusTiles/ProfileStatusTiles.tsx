@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import PlayButton from '../ui/PlayButton';
 
 const sections = [
@@ -68,25 +68,44 @@ const dotIcon = () => (
   <span className="inline-block w-4 h-4 rounded-full mr-2 bg-white border-2 border-blue-500" />
 );
 
+const AnimatedBg = ({ percentValue, className, children }: { percentValue: number, className: string, children?: React.ReactNode }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.style.width = '0%';
+      setTimeout(() => {
+        ref.current && (ref.current.style.width = percentValue + '%');
+      }, 950);
+    }
+  }, [percentValue]);
+  return (
+    <div
+      ref={ref}
+      className={className}
+      style={{ width: 0, transition: 'width 1.2s cubic-bezier(0.4,0,0.2,1)' }}
+    >
+      {children}
+    </div>
+  );
+};
+
 const ProfileStatusTiles: React.FC = () => (
-  <section className="hidden lg:flex bg-white dark:bg-black rounded-2xl shadow p-4 mt-20 w-full max-w-sm flex-col gap-2">
+  <section className="hidden lg:flex bg-white dark:bg-black rounded-2xl shadow p-4 mt-20 w-full max-w-sm flex-col gap-2 m-4">
     <div className="flex justify-between items-center mb-2 flex-row">
-      <h3 className="font-semibold text-[13px] text-gray-900 mr-2 whitespace-nowrap">Complete Your Home Dispo Setup ?</h3>
+      <h3 className="font-semibold text-[13px] text-gray-900 dark:text-white mr-2 whitespace-nowrap ">Complete Your Home Dispo Setup ?</h3>
       <a href="#" className="flex items-center text-xs text-blue-500 font-semibold hover:underline gap-1 whitespace-nowrap">
         <PlayButton width={16} height={16} />
         Learn More
       </a>
     </div>
-    {sections.map((section, ) => (
+    {sections.map((section) => (
       <div
         key={section.title}
         className={`rounded-xl p-3 mb-1 last:mb-0 relative overflow-hidden dark:bg-black`}
       >
-        {/* Dynamic background for percentValue% of each section */}
-        <div
-          className={`absolute top-0 left-0 h-full z-0 rounded-xl ${section.bg} dark:bg-black`}
-          style={{ width: `${section.percentValue}%` }}
-        />
+        {/* Animated dynamic background for percentValue% of each section */}
+        <AnimatedBg percentValue={section.percentValue} className={`absolute top-0 left-0 h-full z-0 rounded-xl ${section.bg} dark:bg-black`}>
+        </AnimatedBg>
         <div className="flex items-center mb-1 relative z-10">
           <span className="font-bold text-xs text-gray-700 dark:text-gray-100 mr-2">{section.title} <span className={`${section.percentColor}`}>({section.percent})</span></span>
         </div>

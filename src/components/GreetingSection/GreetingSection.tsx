@@ -1,27 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Bereket from "../../../src/assets/bereket.jpg";
 import Logo from "../../assets/logo-reisearch.jpg";
 
-const GreetingSection: React.FC = () => (
-  <section className="w-full max-w-3xl ml-0 md:ml-[272px] mt-4 md:mt-10 grid grid-cols-1 md:grid-cols-3 grid-rows-1 md:grid-rows-5/2 gap-3 md:gap-6 mb-2 md:mb-4 px-0 md:px-0 ">
-    {/* Top left: Greeting, progress, profile, button (spans 2 columns) */}
-    <div className="col-span-1 md:col-span-2 mt-2 md:mt-3 row-span-1 md:row-span-3/2 bg-gray-200 dark:bg-gray-800 rounded-2xl shadow p-3 md:p-6 flex flex-col md:flex-row items-center gap-3 md:gap-6 transition-colors duration-300">
-      <div className="flex-1 flex flex-col justify-between h-full">
-        <span className="text-gray-800 dark:text-gray-100 text-base md:text-lg font-semibold mb-1">Hey, Bereket</span>
-        <span className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-0.5">73%</span>
-        <div className="w-full h-2 rounded-full bg-blue-100">
-          <div className="h-2 rounded-full bg-blue-500" style={{ width: '73%' }}></div>
+const GreetingSection: React.FC = () => {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    let current = 0;
+    const interval = setInterval(() => {
+      current += 1;
+      if (current >= 73) {
+        clearInterval(interval);
+        setProgress(73);
+      } else {
+        setProgress(current);
+      }
+    }, 20);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="w-full max-w-3xl ml-0 md:ml-[272px] mt-4 md:mt-10 grid grid-cols-1 md:grid-cols-3 grid-rows-1 md:grid-rows-5/2 gap-3 md:gap-6 mb-2 md:mb-4 px-0 md:px-0 ">
+      {/* Top left: Greeting, progress, profile, button (spans 2 columns) */}
+      <div className="col-span-1 md:col-span-2 mt-2 md:mt-3 row-span-1 md:row-span-3/2 bg-gray-200 dark:bg-gray-800 rounded-2xl shadow p-3 md:p-6 flex flex-col md:flex-row items-center gap-3 md:gap-6 transition-colors duration-300">
+        <div className="flex-1 flex flex-col justify-between h-full">
+          <span className="text-gray-800 dark:text-gray-100 text-base md:text-lg font-semibold mb-1">Hey, Bereket</span>
+          <span className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-0.5">{progress}%</span>
+          <div className="w-full h-2 rounded-full bg-blue-100">
+            <div className="h-2 rounded-full bg-blue-500 transition-all duration-200" style={{ width: `${progress}%` }}></div>
+          </div>
+          <button className="flex items-center gap-1 px-2 bg-blue-500 text-white text-xs md:text-sm font-medium rounded-md hover:bg-blue-600 transition shadow w-fit mt-2 md:mt-0">
+            <svg width="14" height="14" fill="none" viewBox="0 0 20 20">
+              <circle cx="10" cy="10" r="9" stroke="#fff" strokeWidth="2" fill="none" />
+              <polygon points="8,6 14,10 8,14" fill="#fff" />
+            </svg>
+            Learn More
+          </button>
         </div>
-        <button className="flex items-center gap-1 px-2 bg-blue-500 text-white text-xs md:text-sm font-medium rounded-md hover:bg-blue-600 transition shadow w-fit mt-2 md:mt-0">
-          <svg width="14" height="14" fill="none" viewBox="0 0 20 20">
-            <circle cx="10" cy="10" r="9" stroke="#fff" strokeWidth="2" fill="none" />
-            <polygon points="8,6 14,10 8,14" fill="#fff" />
-          </svg>
-          Learn More
-        </button>
+        <img src={Bereket} alt="Profile" className="w-20 h-20 md:w-28 md:h-28 rounded-xl object-cover" />
       </div>
-      <img src={Bereket} alt="Profile" className="w-20 h-20 md:w-28 md:h-28 rounded-xl object-cover" />
-    </div>
 
 
     {/* Top right: Public Info and Enable Notifications */}
@@ -96,5 +113,6 @@ const GreetingSection: React.FC = () => (
 
   </section>
 );
+}
 
 export default GreetingSection; 
