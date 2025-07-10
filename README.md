@@ -2,6 +2,14 @@
 
 A modern, fully responsive real estate dashboard built with Vite, React, TypeScript, TailwindCSS, and React Router DOM. Designed for a seamless experience across mobile, tablet, and desktop, with a focus on clean UI, code reuse, and user-centric features.
 
+
+
+<img width="1280" height="615" alt="image" src="https://github.com/user-attachments/assets/c5b192cc-43c1-43c0-bd17-2c097b4dc96d" />
+
+<img width="1280" height="607" alt="image" src="https://github.com/user-attachments/assets/ec1ad0dd-a6d7-4deb-89a1-6119aa1b85a2" />
+
+
+
 ## Features
 - Responsive layout: Sidebar, Topbar, and main content adapt to all screen sizes
 - Animated onboarding and progress bars
