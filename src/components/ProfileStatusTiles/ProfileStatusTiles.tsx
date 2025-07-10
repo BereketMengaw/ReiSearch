@@ -1,4 +1,5 @@
 import React from 'react';
+import PlayButton from '../ui/PlayButton';
 
 const sections = [
   {
@@ -68,10 +69,13 @@ const dotIcon = () => (
 );
 
 const ProfileStatusTiles: React.FC = () => (
-  <section className="hidden lg:flex bg-white dark:bg-black rounded-2xl shadow p-4 mt-20 w-full max-w-xs flex-col gap-2">
-    <div className="flex justify-between items-center mb-2">
-      <h3 className="font-semibold text-[13px] text-gray-900">Complete Your Home Dispo Setup</h3>
-      <a href="#" className="text-xs text-blue-500 font-semibold hover:underline">Learn More</a>
+  <section className="hidden lg:flex bg-white dark:bg-black rounded-2xl shadow p-4 mt-20 w-full max-w-sm flex-col gap-2">
+    <div className="flex justify-between items-center mb-2 flex-row">
+      <h3 className="font-semibold text-[13px] text-gray-900 mr-2 whitespace-nowrap">Complete Your Home Dispo Setup ?</h3>
+      <a href="#" className="flex items-center text-xs text-blue-500 font-semibold hover:underline gap-1 whitespace-nowrap">
+        <PlayButton width={16} height={16} />
+        Learn More
+      </a>
     </div>
     {sections.map((section, ) => (
       <div

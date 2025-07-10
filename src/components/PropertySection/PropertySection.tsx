@@ -1,19 +1,14 @@
 import React from 'react';
 import ExploreImg from '../../assets/Explore.jpg';
-
-const playIcon = (
-  <svg className="inline mr-1" width="16" height="16" fill="none" viewBox="0 0 20 20">
-    <polygon points="5,3 17,10 5,17" fill="currentColor" />
-  </svg>
-);
+import PlayButton from '../ui/PlayButton';
 
 const PropertySection: React.FC = () => (
-  <section className="w-full max-w-7xl ml-0 lg:ml-[272px] grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-5 mb-2 lg:mb-4 px-0 lg:px-0">
+  <section className="w-full max-w-6xl mx-auto ml-0 lg:ml-[272px] grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-5 mb-2 lg:mb-4 px-0 lg:px-0">
     {/* How to Add a Property */}
-    <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow p-4 lg:p-6 flex flex-col min-h-[260px] lg:min-h-[320px] transition-colors duration-300 w-full">
+    <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow p-4 lg:p-6 flex flex-col min-h-[220px] lg:min-h-[260px] transition-colors duration-300 w-full">
       <div className="flex justify-between items-start mb-4">
         <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-100">How to Add a Property</h3>
-        <a href="#" className="text-sm text-blue-500 font-semibold hover:underline flex items-center">{playIcon} Learn More</a>
+        <a href="#" className="text-sm text-blue-500 font-semibold hover:underline flex items-center"><PlayButton width={16} height={16} className="mr-1" /> Learn More</a>
       </div>
       <div className="flex flex-row items-center flex-1">
         <span className="text-5xl font-extrabold text-gray-200 dark:text-gray-700 mr-4 select-none">02</span>
@@ -24,13 +19,13 @@ const PropertySection: React.FC = () => (
         {/* Faint table image placeholder */}
         <div className="w-32 h-20 bg-gray-100 dark:bg-gray-700 rounded-lg ml-4 opacity-70 border border-gray-200 dark:border-gray-700" />
       </div>
-      <a href="#" className="mt-6 text-sm text-blue-500 font-semibold hover:underline flex items-center">{playIcon} Learn More</a>
+      <a href="#" className="mt-6 text-sm text-blue-500 font-semibold hover:underline flex items-center"><PlayButton width={16} height={16} className="mr-1" /> Learn More</a>
     </div>
     {/* Add New Property */}
     <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow p-4 lg:p-6 flex flex-col min-h-[220px] lg:min-h-[260px] transition-colors duration-300 w-full">
       <div className="flex justify-between items-start mb-4">
         <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-100">Add New Property</h3>
-        <a href="#" className="text-sm text-blue-500 font-semibold hover:underline flex items-center">{playIcon} Learn More</a>
+        <a href="#" className="text-sm text-blue-500 font-semibold hover:underline flex items-center"><PlayButton width={16} height={16} className="mr-1" /> Learn More</a>
       </div>
       <div className="flex-1 flex flex-col justify-center items-center">
         <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl flex flex-col items-center justify-center w-full h-36 transition-colors duration-300">
@@ -49,7 +44,7 @@ const PropertySection: React.FC = () => (
     <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow p-4 lg:p-6 flex flex-col min-h-[220px] lg:min-h-[260px] transition-colors duration-300 w-full">
       <div className="flex justify-between items-start mb-4">
         <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-100">Expand Your Network</h3>
-        <a href="#" className="text-sm text-blue-500 font-semibold hover:underline flex items-center">{playIcon} Learn More</a>
+        <a href="#" className="text-sm text-blue-500 font-semibold hover:underline flex items-center"><PlayButton width={16} height={16} className="mr-1" /> Learn More</a>
       </div>
       <div className="flex-1 flex flex-col justify-center items-center">
         <img src={ExploreImg} alt="Explore REI Directory" className="w-full h-36 object-cover rounded-xl" />
