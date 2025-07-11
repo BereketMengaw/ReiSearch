@@ -33,6 +33,15 @@ const Topbar: React.FC<TopbarProps> = ({ setSidebarOpen }) => {
       {/* Top row: Logo and Hamburger (mobile) */}
       <div className="w-full flex items-center justify-between lg:justify-start lg:w-auto">
         <div className="flex items-center gap-2 sm:gap-4 min-w-fit ml-2 sm:ml-6">
+          {/* Mobile: Clickable profile image next to logo */}
+          <button
+            className="lg:hidden flex items-center justify-center p-0.5 rounded-full border-2 border-blue-500 bg-white dark:bg-gray-800 shadow mr-2"
+            onClick={() => setSidebarOpen(true)}
+            aria-label="Open sidebar"
+            style={{ height: '2rem', width: '2rem' }}
+          >
+            <img src={Img} alt="User" className="w-7 h-7 rounded-full object-cover" />
+          </button>
           {/* Mobile: Clickable logo */}
           <img
             src={Logo}
@@ -53,7 +62,7 @@ const Topbar: React.FC<TopbarProps> = ({ setSidebarOpen }) => {
             Staging / homedispo...
           </button>
         </div>
-        {/* Hamburger for mobile */}
+        {/* Hamburger for mobile - restored */}
         <div className="lg:hidden flex items-center">
           <button
             className="flex items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition ml-2"
