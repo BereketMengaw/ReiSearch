@@ -69,7 +69,15 @@ const Topbar: React.FC<TopbarProps> = ({ setSidebarOpen }) => {
             onClick={() => setMenuOpen(v => !v)}
             aria-label="Open menu"
           >
-            <Menu className="w-6 h-6 text-blue-700" />
+            {menuOpen ? (
+              // X (close) icon
+              <svg className="w-6 h-6 text-blue-700" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="4" y1="4" x2="16" y2="16" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" />
+                <line x1="16" y1="4" x2="4" y2="16" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <Menu className="w-6 h-6 text-blue-700" />
+            )}
           </button>
         </div>
       </div>
